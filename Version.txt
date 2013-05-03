@@ -1,0 +1,10 @@
+Path: trunk
+URL: http://cppcms.svn.sourceforge.net/svnroot/cppcms/cppdb/trunk
+Repository Root: http://cppcms.svn.sourceforge.net/svnroot/cppcms
+Repository UUID: 564b3a1d-c13e-0410-a0ae-8b9632cf44ab
+Revision: 2217
+Node Kind: directory
+Last Changed Author: artyom-beilis
+Last Changed Rev: 2188
+Last Changed Date: 2012-06-23 02:34:14 -0700 (Sat, 23 Jun 2012)
+
