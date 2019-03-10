@@ -35,20 +35,20 @@ By default Release with debug info version is build (unless you are using MSVC w
 Note:
 MSVC Projects are not supported use "NMake Makefiles" generator to build CppDB with MSVC. 
 Build Process 
-Download latest version of CppDB or fetch one from SVN using subverision:    
-`
+Download latest version of CppDB or fetch one from github:    
+```
 $ git clone https://github.com/springwind2006/CppDB.git
-`
+```
 Go to the created directory and make build directory and go to it.     
-`
+```
 $ cd CppDB   
 $ mkdir build   
 $ cd build   
-`
+```
 
 Run cmake with all options you need and then make, make install    
-`
+```
 $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..   
 $ make   
 $ make install  
-`
+```
