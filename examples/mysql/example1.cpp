@@ -5,7 +5,7 @@
 int main()
 {
 	try {
-		cppdb::session sql("mysql:database=test;user=root;password=test");
+		cppdb::session sql("mysql:database=test;user=test;password=test");
 		
         sql << "set names utf8;" << cppdb::exec;
 		sql << "DROP TABLE IF EXISTS test;" << cppdb::exec;

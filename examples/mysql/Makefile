@@ -1,4 +1,4 @@
-LIBS=-lcppcms -lbooster -lcppdb -lcppdb_sqlite3
+LIBS=-lcppcms -lbooster -lcppdb -lcppdb_mysql
 
 
 all: example1
