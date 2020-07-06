@@ -55,11 +55,14 @@ namespace cppdb {
 
 	ref_ptr<backend::connection> pool::open()
 	{
+        // 不限制数量
 		if(limit_ == 0)
 			return driver_manager::instance().connect(ci_);
-
+        
+        //从池中获取连接
 		ref_ptr<backend::connection> p = get();
-
+        
+        //如果找不到连接则创建连接
 		if(!p) {
 			p=driver_manager::instance().connect(ci_);
 		}
@@ -75,11 +78,13 @@ namespace cppdb {
 		ref_ptr<backend::connection> c;
 		pool_type garbage;
 		std::time_t now = time(0);
+        
 		{
 			mutex::guard l(lock_);
 			// Nothing there should throw so it is safe
 			pool_type::iterator p = pool_.begin(),tmp;
 			while(p!=pool_.end()) {
+                //删除过期连接
 				if(p->last_used + life_time_ < now) {
 					tmp=p;
 					p++;
@@ -122,6 +127,7 @@ namespace cppdb {
 			
 			pool_type::iterator p = pool_.begin(),tmp;
 			while(p!=pool_.end()) {
+                //删除过期连接
 				if(p->last_used + life_time_ < now) {
 					tmp=p;
 					p++;
@@ -134,6 +140,7 @@ namespace cppdb {
 				}
 			}
 			// can be at most 1 entry bigger then limit
+            // 多余最大现在，则移除最先加入的连接
 			if(size_ > limit_) {
 				garbage.splice(garbage.begin(),pool_,pool_.begin());
 				size_--;
