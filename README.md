@@ -1,4 +1,10 @@
 CppDB
 =====
 
-Not maintained - CppDB mirror from http://cppcms.svn.sourceforge.net/svnroot/cppcms/cppdb/trunk
+CppDB mirror, not maintained.
+
+Please send pull requests to the original code tree:
+
+Source code: https://sourceforge.net/projects/cppcms/files/
+Details: http://cppcms.com
+
